@@ -1,0 +1,10 @@
+# Core backend dependencies for the Mocha ABA Note Reviewer engine.
+# UI-layer dependencies (pywebview, etc.) are intentionally NOT listed here —
+# this package is meant to be usable standalone, independent of any UI.
+
+pypdf>=3.17
+python-docx>=1.1
+requests>=2.31          # used by the local Ollama client (HTTP calls to localhost)
+
+# Dev / test only
+pytest>=8.0

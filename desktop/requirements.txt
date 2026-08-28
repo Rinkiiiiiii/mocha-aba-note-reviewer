@@ -1,0 +1,16 @@
+# Desktop UI dependencies, on top of the core engine's requirements.txt
+# (install both: pip install -r requirements.txt -r desktop/requirements.txt).
+# Kept separate deliberately — core/ has zero UI dependencies by design, see
+# requirements.txt's own comment.
+
+pywebview>=5.0
+
+# Linux only: pywebview needs a GTK or Qt Python binding installed to
+# actually render a native window — the pip package alone isn't enough
+# there. On Windows/macOS, pywebview uses the OS's built-in WebView2 /
+# WKWebView and no extra binding is needed; skip this note on those
+# platforms.
+#
+#   Debian/Ubuntu:  sudo apt install python3-gi gir1.2-webkit2-4.1
+#   Fedora:         sudo dnf install python3-gobject gtk4 webkit2gtk4.1
+#   or, via pip:    pip install pywebview[qt]   (pulls in PyQt/PySide + qtpy)
